@@ -1,4 +1,5 @@
 use rpds::HashTrieMap;
+use state_processing::AllCaches;
 use std::collections::{HashMap, HashSet};
 use std::thread::sleep;
 use std::time::Duration;
@@ -71,11 +72,11 @@ fn main() {
             println!("{}", map.len());
         }
 
-        "holesky_genesis_build_caches" => {
+        "holesky_genesis_build_all_caches" => {
             let mut map = HashMap::new();
             for i in 0..n {
                 let (mut state, spec) = read_holesky_state();
-                state.build_caches(&spec).unwrap();
+                state.build_all_caches(&spec).unwrap();
                 map.insert(i, state);
             }
 
@@ -97,11 +98,11 @@ fn main() {
             println!("{}", map.len());
         }
 
-        "holesky_genesis_tree_cache_build_cache" => {
+        "holesky_genesis_tree_cache_build_all_caches" => {
             let mut map = HashMap::new();
             for i in 0..n {
                 let (mut state, spec) = read_holesky_state();
-                state.build_caches(&spec).unwrap();
+                state.build_all_caches(&spec).unwrap();
                 state.update_tree_hash_cache().unwrap();
                 map.insert(i, state);
             }

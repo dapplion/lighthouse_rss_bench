@@ -40,6 +40,15 @@ dependencies = [
 
 [[package]]
 name = "archery"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0a8da9bc4c4053ee067669762bcaeea6e241841295a2b6c948312dad6ef4cc02"
+dependencies = [
+ "static_assertions",
+]
+
+[[package]]
+name = "archery"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8967cd1cc9e9e1954f644e14fbd6042fe9a37da96c52a67e44a2ac18261f8561"
@@ -119,7 +128,7 @@ dependencies = [
 [[package]]
 name = "bls"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "arbitrary",
  "blst",
@@ -187,7 +196,7 @@ dependencies = [
 [[package]]
 name = "cached_tree_hash"
 version = "0.1.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "ethereum-types",
  "ethereum_hashing",
@@ -233,7 +242,7 @@ dependencies = [
 [[package]]
 name = "compare_fields"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "itertools",
 ]
@@ -241,7 +250,7 @@ dependencies = [
 [[package]]
 name = "compare_fields_derive"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -398,7 +407,7 @@ dependencies = [
 [[package]]
 name = "eth2_interop_keypairs"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "bls",
  "ethereum_hashing",
@@ -655,11 +664,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "instant"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c"
+dependencies = [
+ "cfg-if",
+]
+
+[[package]]
 name = "int_to_bytes"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "bytes",
+]
+
+[[package]]
+name = "integer-sqrt"
+version = "0.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "276ec31bcb4a9ee45f58bec6f9ec700ae4cf4f4f8f2fa7e06cb406bd5ffdd770"
+dependencies = [
+ "num-traits",
 ]
 
 [[package]]
@@ -709,7 +736,7 @@ dependencies = [
 [[package]]
 name = "kzg"
 version = "0.1.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "arbitrary",
  "c-kzg",
@@ -763,11 +790,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "lighthouse_metrics"
+version = "0.2.0"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
+dependencies = [
+ "lazy_static",
+ "prometheus",
+]
+
+[[package]]
 name = "lighthouse_rss_bench"
 version = "0.1.0"
 dependencies = [
  "jemallocator",
- "rpds",
+ "rpds 1.1.0",
+ "state_processing",
  "types",
 ]
 
@@ -808,7 +845,7 @@ checksum = "523dc4f511e55ab87b694dc30d0f820d60906ef06413f93d4d7a1385599cc149"
 [[package]]
 name = "merkle_proof"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "ethereum-types",
  "ethereum_hashing",
@@ -837,6 +874,28 @@ dependencies = [
  "quote",
  "smallvec",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "milhouse"
+version = "0.1.0"
+source = "git+https://github.com/sigp/milhouse?branch=main#6c82029bcbc656a3cd423d403d7551974818d45d"
+dependencies = [
+ "arbitrary",
+ "derivative",
+ "ethereum-types",
+ "ethereum_hashing",
+ "ethereum_ssz",
+ "ethereum_ssz_derive",
+ "itertools",
+ "parking_lot 0.11.2",
+ "rayon",
+ "serde",
+ "smallvec",
+ "tree_hash",
+ "triomphe",
+ "typenum",
+ "vec_map",
 ]
 
 [[package]]
@@ -928,12 +987,37 @@ dependencies = [
 
 [[package]]
 name = "parking_lot"
+version = "0.11.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7d17b78036a60663b797adeaee46f5c9dfebb86948d1255007a1d6be0271ff99"
+dependencies = [
+ "instant",
+ "lock_api",
+ "parking_lot_core 0.8.6",
+]
+
+[[package]]
+name = "parking_lot"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3742b2c103b9f06bc9fff0a37ff4912935851bee6d36f3c02bcc755bcfec228f"
 dependencies = [
  "lock_api",
- "parking_lot_core",
+ "parking_lot_core 0.9.9",
+]
+
+[[package]]
+name = "parking_lot_core"
+version = "0.8.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "60a2cfe6f0ad2bfc16aefa463b497d5c7a5ecd44a23efa72aa342d90177356dc"
+dependencies = [
+ "cfg-if",
+ "instant",
+ "libc",
+ "redox_syscall 0.2.16",
+ "smallvec",
+ "winapi",
 ]
 
 [[package]]
@@ -944,7 +1028,7 @@ checksum = "4c42a9226546d68acdd9c0a280d17ce19bfe27a46bf68784e4066115788d008e"
 dependencies = [
  "cfg-if",
  "libc",
- "redox_syscall",
+ "redox_syscall 0.4.1",
  "smallvec",
  "windows-targets 0.48.5",
 ]
@@ -1008,6 +1092,27 @@ checksum = "e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae"
 dependencies = [
  "unicode-ident",
 ]
+
+[[package]]
+name = "prometheus"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "449811d15fbdf5ceb5c1144416066429cf82316e2ec8ce0c1f6f8a02e7bbcf8c"
+dependencies = [
+ "cfg-if",
+ "fnv",
+ "lazy_static",
+ "memchr",
+ "parking_lot 0.12.1",
+ "protobuf",
+ "thiserror",
+]
+
+[[package]]
+name = "protobuf"
+version = "2.28.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "106dd99e98437432fed6519dedecfade6a06a73bb7b2a1e019fdd2bee5778d94"
 
 [[package]]
 name = "quote"
@@ -1085,6 +1190,15 @@ dependencies = [
 
 [[package]]
 name = "redox_syscall"
+version = "0.2.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb5a58c1855b4b6819d59012155603f0b22ad30cad752600aadfcb695265519a"
+dependencies = [
+ "bitflags 1.3.2",
+]
+
+[[package]]
+name = "redox_syscall"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4722d768eff46b75989dd134e5c353f0d6296e5aaa3132e776cbdb56be7731aa"
@@ -1148,11 +1262,20 @@ dependencies = [
 
 [[package]]
 name = "rpds"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b4ef5140bcb576bfd6d56cd2de709a7d17851ac1f3805e67fe9d99e42a11821f"
+dependencies = [
+ "archery 0.4.0",
+]
+
+[[package]]
+name = "rpds"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a0e15515d3ce3313324d842629ea4905c25a13f81953eadb88f85516f59290a4"
 dependencies = [
- "archery",
+ "archery 1.2.0",
 ]
 
 [[package]]
@@ -1209,7 +1332,7 @@ checksum = "e86697c916019a8588c99b5fac3cead74ec0b4b819707a682fd4d23fa0ce1ba1"
 [[package]]
 name = "safe_arith"
 version = "0.1.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 
 [[package]]
 name = "scopeguard"
@@ -1318,6 +1441,38 @@ dependencies = [
 ]
 
 [[package]]
+name = "stable_deref_trait"
+version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
+
+[[package]]
+name = "state_processing"
+version = "0.2.0"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
+dependencies = [
+ "arbitrary",
+ "bls",
+ "derivative",
+ "ethereum_hashing",
+ "ethereum_ssz",
+ "ethereum_ssz_derive",
+ "int_to_bytes",
+ "integer-sqrt",
+ "itertools",
+ "lazy_static",
+ "lighthouse_metrics",
+ "merkle_proof",
+ "rayon",
+ "safe_arith",
+ "smallvec",
+ "ssz_types",
+ "tree_hash",
+ "types",
+ "vec_map",
+]
+
+[[package]]
 name = "static_assertions"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1353,9 +1508,9 @@ dependencies = [
 
 [[package]]
 name = "superstruct"
-version = "0.6.0"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75b9e5728aa1a87141cefd4e7509903fc01fa0dcb108022b1e841a67c5159fc5"
+checksum = "6f4e1f478a7728f8855d7e620e9a152cf8932c6614f86564c886f9b8141f3201"
 dependencies = [
  "darling",
  "itertools",
@@ -1368,7 +1523,7 @@ dependencies = [
 [[package]]
 name = "swap_or_not_shuffle"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "ethereum-types",
  "ethereum_hashing",
@@ -1417,10 +1572,30 @@ dependencies = [
 [[package]]
 name = "test_random_derive"
 version = "0.2.0"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "thiserror"
+version = "1.0.57"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e45bcbe8ed29775f228095caf2cd67af7a4ccf756ebff23a306bf3e8b47b24b"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.57"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a953cb265bef375dae3de6663da4d3804eee9682ea80d8e2542529b73c531c81"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.51",
 ]
 
 [[package]]
@@ -1485,6 +1660,10 @@ name = "triomphe"
 version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "859eb650cfee7434994602c3a68b25d77ad9e68c8a6cd491616ef86661382eb3"
+dependencies = [
+ "serde",
+ "stable_deref_trait",
+]
 
 [[package]]
 name = "typenum"
@@ -1495,7 +1674,7 @@ checksum = "42ff0bf0c66b8238c6f3b578df37d0b7848e55df8577b3f74f92a69acceeb825"
 [[package]]
 name = "types"
 version = "0.2.1"
-source = "git+https://github.com/sigp/lighthouse?rev=v4.6.0#1be5253610dc8fee3bf4b7a8dc1d01254bc5b57d"
+source = "git+https://github.com/sigp/lighthouse?rev=a5d3408c597d65b15b16091a84bd0584f1e591d5#a5d3408c597d65b15b16091a84bd0584f1e591d5"
 dependencies = [
  "arbitrary",
  "bls",
@@ -1518,11 +1697,13 @@ dependencies = [
  "maplit",
  "merkle_proof",
  "metastruct",
- "parking_lot",
+ "milhouse",
+ "parking_lot 0.12.1",
  "rand",
  "rand_xorshift",
  "rayon",
  "regex",
+ "rpds 0.11.0",
  "rusqlite",
  "safe_arith",
  "serde",
@@ -1576,6 +1757,12 @@ name = "vcpkg"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+
+[[package]]
+name = "vec_map"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1bddf1187be692e79c5ffeab891132dfb0f236ed36a43c7ed39f1165ee20191"
 
 [[package]]
 name = "version_check"

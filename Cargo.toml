@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 jemallocator = "0.5.4"
 rpds = "1.1.0"
-types = { git = "https://github.com/sigp/lighthouse", rev = "v4.6.0" }
+types = { git = "https://github.com/sigp/lighthouse", rev = "a5d3408c597d65b15b16091a84bd0584f1e591d5" }
+state_processing = { git = "https://github.com/sigp/lighthouse", rev = "a5d3408c597d65b15b16091a84bd0584f1e591d5" }
