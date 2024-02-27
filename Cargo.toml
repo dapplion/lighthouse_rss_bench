@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 jemallocator = "0.5.4"
 rpds = "1.1.0"
+types = { git = "https://github.com/sigp/lighthouse", rev = "v4.6.0" }
