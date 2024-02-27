@@ -112,7 +112,7 @@ fn main() {
             println!("{}", map.len());
         }
 
-        _ => {}
+        _ => panic!("unknown case"),
     }
 }
 

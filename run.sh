@@ -8,7 +8,7 @@ cargo build --release
 
 BEACON_STATE_PATH="/root/holesky_genesis.ssz"
 
-for CASE in "holesky_genesis" "holesky_genesis_build_caches" "holesky_genesis_tree_cache" "holesky_genesis_tree_cache_build_cache"; do
+for CASE in "holesky_genesis" "holesky_genesis_build_all_caches" "holesky_genesis_tree_cache" "holesky_genesis_tree_cache_build_all_caches"; do
   for N in 1 2 3; do
     > /tmp/lighthouse_rss_bench
 
