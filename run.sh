@@ -1,31 +1,34 @@
 #!/bin/bash
+set -e
 
 # kill lingering processes
-pkill lighthouse_rss_bench
+pkill lighthouse_rss || true
 
 cargo build --release
 
+BEACON_STATE_PATH="/root/holesky_genesis.ssz"
 
-for CASE in "map_pkidx" "rpds_map_pkidx"; do
-  for N in 100000 1000000 10000000; do
+for CASE in "holesky_genesis" "holesky_genesis_build_caches" "holesky_genesis_tree_cache" "holesky_genesis_tree_cache_build_cache"; do
+  for N in 1 2 3; do
     > /tmp/lighthouse_rss_bench
 
     # Start in the background
-    N=$N CASE=$CASE ./target/release/lighthouse_rss_bench > /tmp/lighthouse_rss_bench &
+    N=$N CASE=$CASE BEACON_STATE_PATH=$BEACON_STATE_PATH ./target/release/lighthouse_rss_bench > /tmp/lighthouse_rss_bench &
     # Capture the last background process's PID
     PID=$!
 
     # Give the program some time to start and use memory
     while true; do
       if grep -q "allocated" "/tmp/lighthouse_rss_bench"; then
-          break 
+          break
       else
           sleep 1
       fi
     done
 
     # Note, will error if there are more than one processes running
-    rss_value=$(ps x -o rss,comm | grep "target/release/lighthouse_rss_bench" | awk '{print $1}')
+    # Note: using incomplete name, as ubuntu ps crops the process name
+    rss_value=$(ps x -o rss,comm | grep "lighthouse_rss" | awk '{print $1}')
 
     # Check if rss_value is not empty
     if [ -z "$rss_value" ]; then
@@ -37,8 +40,8 @@ for CASE in "map_pkidx" "rpds_map_pkidx"; do
     echo "CASE=$CASE N=$N rss=$rss_value bytes/N=$result"
 
     # Kill and wait to terminate
-    kill $PID > /dev/null 2>&1
-    wait $PID > /dev/null 2>&1
+    kill $PID > /dev/null 2>&1 || true
+    wait $PID > /dev/null 2>&1 || true
   done
 done
 
